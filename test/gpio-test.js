@@ -1,25 +1,28 @@
-const artik = require('../lib/artik-sdk');
+var gpio = require('../src/gpio');
+var artik = require('../lib/artik-sdk');
 
 const name = artik.get_platform_name();
 
 if(name == 'Artik 5') {
 	console.log('Running GPIO test on Artik 5');
 	const a5 = require('../src/platform/artik520');
-	var red = artik.gpio(a5.ARTIK_A5_GPIO_XEINT0, 'red', 'out', 'digital', 'none', 0);
-	var green = artik.gpio(a5.ARTIK_A5_GPIO_XEINT1, 'green', 'out', 'digital', 'none', 0);
-	var blue = artik.gpio(a5.ARTIK_A5_GPIO_XEINT2, 'blue', 'out', 'digital', 'none', 0);
-	var button = artik.gpio(a5.ARTIK_A5_GPIO_XEINT3, 'button', 'in' , 'digital', 'both', 0);
+	var red = new gpio(a5.ARTIK_A5_GPIO_XEINT0, 'red', 'out', 'digital', 'none', 0);
+	var green = new gpio(a5.ARTIK_A5_GPIO_XEINT1, 'green', 'out', 'digital', 'none', 0);
+	var blue = new gpio(a5.ARTIK_A5_GPIO_XEINT2, 'blue', 'out', 'digital', 'none', 0);
+	var button = new gpio(a5.ARTIK_A5_GPIO_XEINT3, 'button', 'in' , 'digital', 'both', 0);
+	button.request();
 } else if(name == 'Artik 10') {
 	console.log('Running GPIO test on Artik 10');
 	const a10 = require('../src/platform/artik1020');
-	var red = artik.gpio(a10.ARTIK_A10_GPIO_XEINT0, 'red', 'out', 'digital', 'none', 0);
-	var green = artik.gpio(a10.ARTIK_A10_GPIO_XEINT1, 'green', 'out', 'digital', 'none', 0);
-	var blue = artik.gpio(a10.ARTIK_A10_GPIO_XEINT2, 'blue', 'out', 'digital', 'none', 0);
-	var button = artik.gpio(a10.ARTIK_A10_GPIO_XEINT3, 'button', 'in' , 'digital', 'both', 0);
+	var red = new gpio(a10.ARTIK_A10_GPIO_XEINT0, 'red', 'out', 'digital', 'none', 0);
+	var green = new gpio(a10.ARTIK_A10_GPIO_XEINT1, 'green', 'out', 'digital', 'none', 0);
+	var blue = new gpio(a10.ARTIK_A10_GPIO_XEINT2, 'blue', 'out', 'digital', 'none', 0);
+	var button = new gpio(a10.ARTIK_A10_GPIO_XEINT3, 'button', 'in' , 'digital', 'both', 0);
+	button.request();
 }
 
-button.register_interrupt(function() {
-	console.log("Button state " + button.read());
+button.on('changed', function(val) {
+	console.log("Button state: " + val);
 });
 
 var color = 0;
@@ -43,7 +46,8 @@ setInterval(function () {
 },1000);
 
 process.on('SIGINT', function () {
-	button.unregister_interrupt();
+	console.log('exiting test');
+	button.release();
     process.exit(0);
 });
 
