@@ -35,6 +35,7 @@
     "lib/artik-sdk.node",
     "src/platform/artik520.js",
     "src/platform/artik1020.js",
+    "src/gpio.js",
     "src/bluetooth.js",
     "src/wifi.js",
     "src/zigbee.js",
