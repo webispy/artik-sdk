@@ -1,6 +1,6 @@
 {
   "name": "artik-sdk",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "SDK for developing applications for Samsung's ARTIK platform",
   "main" : "src/index.js",
   "scripts": {
@@ -21,7 +21,9 @@
       "SENSOR",
       "NETWORK",
       "WEBSOCKET",
-      "ZIGBEE"
+      "ZIGBEE",
+      "WIFI",
+      "BLUETOOTH"
   ],
   "author": "Gregory Lemercier <g.lemercier@ssi.samsung.com>",
   "license": "MIT",
