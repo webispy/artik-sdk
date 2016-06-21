@@ -41,6 +41,7 @@
     "src/bluetooth.js",
     "src/wifi.js",
     "src/zigbee.js",
+    "src/websocket.js",
     "test/gpio-test.js",
     "test/i2c-test.js",
     "test/serial-test.js",

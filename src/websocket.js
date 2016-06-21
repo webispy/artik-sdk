@@ -15,7 +15,7 @@ Websocket.prototype.open_stream = function open_stream() {
 	var _ = this;
 	return this.websocket.open_stream(
 		function(status) {
-			_.emit('connection', status);
+			_.emit('connected', status);
 		}, 
 		function(message) {
 			_.emit('receive', message);

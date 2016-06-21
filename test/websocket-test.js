@@ -16,7 +16,7 @@ var conn = new websocket(host, uri, port, ssl_connection, use_se);
 
 conn.open_stream();
 
-conn.on('connection', function(result) {
+conn.on('connected', function(result) {
 	console.log("Connect result: " + result);
 	conn.write_stream(register_message);
 });
