@@ -24,7 +24,7 @@ Wifi.prototype.scan_request = function() {
 Wifi.prototype.connect = function(ssid, password, is_persistent) {
 	var _ = this;
 	return this.wifi.connect(ssid, password, is_persistent, function() {
-		this.emit('connect');
+		_.emit('connected');
 	});
 };
 
