@@ -10,11 +10,17 @@
 	const artik = require('../lib/artik-sdk'); // Instantiate the main module object for accessing to the Artik SDK.
 	const name = artik.get_platform_name(); // Get the platform name.
 
-	if (name == 'Artik 5') { // Check for a board ARTIK 5.
-		const a5 = require('../src/platform/artik520'); // If 'yes', then instantiate the platform depedencies.
-	} else if (name == 'Artik 10') { // Check for a board ARTIK 10.
-		const a10 = require('../src/platform/artik1020'); // If 'yes', then instantiate the platform depedencies.
-	}
+        if (name == 'Artik 520') { // Check for a A520 board
+                const a5 = require('../src/platform/artik520'); // If 'yes', thee
+n instantiate the platform depedencies.
+        } else if (name == 'Artik 1020') { // Check for a A1020 board
+                const a10 = require('../src/platform/artik1020'); // If 'yes', tt
+hen instantiate the platform depedencies.
+        } else if (name == 'Artik 71O') { // Check for a A710 board
+                const a7 = require('../src/platform/artik710'); // If 'yes', thee
+e
+n instantiate the platform depedencies.
+        }
 		...
 ```
  __NB__:  
