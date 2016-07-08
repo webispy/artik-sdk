@@ -1,6 +1,6 @@
 {
   "name": "artik-sdk",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "SDK for developing applications for Samsung's ARTIK platform",
   "main" : "src/index.js",
   "scripts": {
@@ -37,11 +37,13 @@
     "lib/artik-sdk.node",
     "src/platform/artik520.js",
     "src/platform/artik1020.js",
+    "src/platform/artik710.js",
     "src/gpio.js",
     "src/bluetooth.js",
     "src/wifi.js",
     "src/zigbee.js",
     "src/websocket.js",
+    "src/serial.js",
     "test/gpio-test.js",
     "test/i2c-test.js",
     "test/serial-test.js",
