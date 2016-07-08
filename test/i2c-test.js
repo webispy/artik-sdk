@@ -2,14 +2,15 @@ const artik = require('../lib/artik-sdk');
 
 const name = artik.get_platform_name();
 
-if(name == 'Artik 5') {
-	console.log('Running I2C test on Artik 5');
-	const a5 = require('../src/platform/artik520');
+if(name == 'Artik 520') {
+	console.log('Running I2C test on Artik 520');
 	var cw2015 = artik.i2c(1, 2000, '8', 0x62);
-} else if(name == 'Artik 10') {
-	console.log('Running I2C test on Artik 10');
-	const a10 = require('./src/platform/artik1020');
+} else if(name == 'Artik 1020') {
+	console.log('Running I2C test on Artik 1020');
 	var cw2015 = artik.i2c(0, 2000, '8', 0x62);
+} else if(name == 'Artik 710') {
+	console.log('Running I2C test on Artik 710');
+	var cw2015 = artik.i2c(8, 2000, '8', 0x62);
 }
 
 if (cw2015.request()) {

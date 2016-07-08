@@ -6,16 +6,16 @@ const command_reg = 0x01;
 const commien_reg = 0x02;
 const cmd_softreset = 0x0f;
 
-if(name == 'Artik 5') {
-	console.log('Running SPI test on Artik 5');
+if(name == 'Artik 520') {
+	console.log('Running SPI test on Artik 520');
 	const a5 = require('../src/platform/artik520');
 	var pn512 = artik.spi(a5.ARTIK_A10_SPI.BUS.BUS1,
 					  a5.ARTIK_A10_SPI.CS.CS0,
 					  a5.ARTIK_A10_SPI.MODE.MODE0,
 					  a5.ARTIK_A10_SPI.BITS.BITS8,
 					  500000);
-} else if(name == 'Artik 10') {
-	console.log('Running SPI test on Artik 10');
+} else if(name == 'Artik 1020') {
+	console.log('Running SPI test on Artik 1020');
 	const a10 = require('../src/platform/artik1020');
 	var pn512 = artik.spi(a10.ARTIK_A10_SPI.BUS.BUS1,
 						  a10.ARTIK_A10_SPI.CS.CS0,
