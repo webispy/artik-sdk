@@ -1,4 +1,4 @@
-var bt = require('../src/bluetooth').Bluetooth;
+var bt = new (require('../src/bluetooth'))();
 
 var remote_addr = "<BT device address";
 
