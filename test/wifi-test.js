@@ -1,4 +1,4 @@
-var wifi = require('../src/wifi').Wifi;
+var wifi = new (require('../src/wifi'))();
 
 var ssid = '<enter a SSID here>';
 var pwd = '<passphrase of the SSID>';
