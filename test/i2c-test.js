@@ -1,3 +1,12 @@
+/*
+ * This test only works if the CW2015 Linux driver is unbound first:
+ * artik520 : $ echo 1-0062 > /sys/bus/i2c/drivers/cw201x/unbind
+ * artik1020: $ echo 0-0062 > /sys/bus/i2c/drivers/cw201x/unbind
+ * artik710 : $ echo 8-0062 > /sys/bus/i2c/drivers/cw201x/unbind
+ */
+
+
+
 const artik = require('../lib/artik-sdk');
 
 const name = artik.get_platform_name();
@@ -24,6 +33,6 @@ if (cw2015.request()) {
   cw2015.write_register(8, reg, 1);
   reg = cw2015.read_register(8, 1);
   console.log('Config: 0x' + Buffer(reg).toString('hex'));
-  
+
   cw2015.release();
 }
