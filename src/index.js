@@ -23,4 +23,4 @@ module.exports.zigbee = require('./zigbee');
 module.exports.gpio = require('./gpio');
 module.exports.serial = require('./serial');
 module.exports.websocket = require('./websocket');
-
+module.exports.lwm2m = require('./lwm2m');
