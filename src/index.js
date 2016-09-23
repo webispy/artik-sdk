@@ -24,3 +24,4 @@ module.exports.gpio = require('./gpio');
 module.exports.serial = require('./serial');
 module.exports.websocket = require('./websocket');
 module.exports.lwm2m = require('./lwm2m');
+module.exports.mqtt = require('./mqtt');
