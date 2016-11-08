@@ -484,7 +484,7 @@ uart.set_flowctrl(1);
 ##read
 
 ```javascript
-serial.on('read', function(String))
+serial.on('read', function(Buffer))
 ```
 
 **Description**
@@ -493,7 +493,7 @@ Called every time data is received on the serial port.
 
 **Parameters**
 
- - *String*: string containing the data that was received on the serial port.
+ - *Buffer*: buffer containing the data that was received on the serial port.
 
 **Example**
 
