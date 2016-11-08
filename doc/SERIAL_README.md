@@ -335,10 +335,10 @@ None.
 uart.set_parity(0);
 ```
 
-##get_data
+##get_data_bits
 
 ```javascript
-Number get_data()
+Number get_data_bits()
 ```
 
 **Description**
@@ -356,13 +356,13 @@ None.
 **Example**
 
 ```javascript
-console.log('Data bits: ' + uart.get_data());
+console.log('Data bits: ' + uart.get_data_bits());
 ```
 
-##set_data
+##set_data_bits
 
 ```javascript
-set_data(Number data_bits)
+set_data_bits(Number data_bits)
 ```
 
 **Description**
@@ -380,13 +380,13 @@ None.
 **Example**
 
 ```javascript
-uart.set_data(0);
+uart.set_data_bits(0);
 ```
 
-##get_stop
+##get_stop_bits
 
 ```javascript
-Number get_stop()
+Number get_stop_bits()
 ```
 
 **Description**
@@ -404,13 +404,13 @@ None.
 **Example**
 
 ```javascript
-console.log('Stop bits: ' + uart.get_stop());
+console.log('Stop bits: ' + uart.get_stop_bits());
 ```
 
-##set_stop
+##set_stop_bits
 
 ```javascript
-set_stop(Number stop_bits)
+set_stop_bits(Number stop_bits)
 ```
 
 **Description**
@@ -428,7 +428,7 @@ None.
 **Example**
 
 ```javascript
-uart.set_stop(0);
+uart.set_stop_bits(0);
 ```
 
 ##get_flowctrl
@@ -458,7 +458,7 @@ console.log('Flow control: ' + uart.get_flowctrl());
 ##set_flowctrl
 
 ```javascript
-set_flowctrl(Number stop_bits)
+set_flowctrl(Number flow_control)
 ```
 
 **Description**
