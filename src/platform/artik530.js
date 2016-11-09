@@ -13,25 +13,7 @@ exports.ARTIK_A530_GPIO_GPIO9 = 27;
 exports.ARTIK_A530_GPIO_AGPIO0 = 161;
 
 /* SERIAL definition */
-exports.ARTIK_A530_SERIAL = { 'UART' : { 'UART4' : 4 },
-			      'BAUD' : { 'B4800' : 0,
-				       'B9600' : 1,
-				       'B14400' : 2,
-				       'B19200' : 3,
-				       'B38400' : 4,
-				       'B57600' : 5,
-				       'B115200' : 6 },
-			    'PARITY' : { 'NONE': 7,
-				         'ODD' : 8,
-				         'EVEN' : 9 },
-			    'DATA' : { 'BIT7' : 10,
-				       'BIT8' : 11 },
-			    'STOP' : { 'BIT1' : 12,
-				       'BIT2' : 13 },
-			    'FLOWCTRL' : { 'NONE' : 14,
-					   'HARD' : 15,
-					   'SOFT' : 16 }
-			  };
+exports.ARTIK_A530_SERIAL = { 'UART' : { 'UART4' : 4 } };
 
 
 /* PWM definition */

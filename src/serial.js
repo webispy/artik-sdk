@@ -48,6 +48,11 @@ Serial.prototype.get_data_bits = function get_data_bits() {
 Serial.prototype.get_stop_bits = function get_stop_bits() {
     return this.serial.get_stop_bits();
 };
+
+Serial.prototype.get_flowctrl = function get_flowctrl() {
+    return this.serial.get_flowctrl();
+};
+
 Serial.prototype.set_port_num = function set_port_num(val) {
     return this.serial.set_port_num(val);
 };
@@ -70,4 +75,8 @@ Serial.prototype.set_data_bits = function set_data_bits(val) {
 
 Serial.prototype.set_stop_bits = function set_stop_bits(val) {
     return this.serial.set_stop_bits(val);
+};
+
+Serial.prototype.set_flowctrl = function set_flowctrl(val) {
+    return this.serial.set_flowctrl(val);
 };

@@ -33,23 +33,6 @@ exports.ARTIK_A5_SERIAL = { 'SCOM' : { 'XSCOM1' : 0,
 				       'XSCOM2' : 1, 
 				       'XSCOM3' : 2,
 				       'XSCOM4' : 3 },
-			    'BAUD' : { 'B4800' : 0,
-				       'B9600' : 1,
-				       'B14400' : 2,
-				       'B19200' : 3,
-				       'B38400' : 4,
-				       'B57600' : 5,
-				       'B115200' : 6 },
-			    'PARITY' : { 'NONE': 7,
-				         'ODD' : 8,
-				         'EVEN' : 9 },
-			    'DATA' : { 'BIT7' : 10,
-				       'BIT8' : 11 },
-			    'STOP' : { 'BIT1' : 12,
-				       'BIT2' : 13 },
-			    'FLOWCTRL' : { 'NONE' : 14,
-					   'HARD' : 15,
-					   'SOFT' : 16 }
 			  };
 
 
