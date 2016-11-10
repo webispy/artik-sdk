@@ -2,50 +2,50 @@
 
 ##Baudrates
 
-| Baudrate | Value |
-|:---------|:-----:|
-| 4800     | 0     |
-| 9600     | 1     |
-| 14400    | 2     |
-| 19200    | 3     |
-| 38400    | 4     |
-| 57600    | 5     |
-| 115200   | 6     |
+| Baudrate | Value  |
+|:---------|:------:|
+| 4800     | 4800   |
+| 9600     | 9600   |
+| 14400    | 14400  |
+| 19200    | 19200  |
+| 38400    | 38400  |
+| 57600    | 57600  |
+| 115200   | 115200 |
 
 ##Parity
 
 | Parity | Value |
 |:-------|:-----:|
-| None   | 0     |
-| Odd    | 1     |
-| Even   | 2     |
+| None   | none  |
+| Odd    | odd   |
+| Even   | even  |
 
 ##Data bits
 
 | Data bits | Value |
 |:----------|:-----:|
-| 7         | 0     |
-| 8         | 1     |
+| 7         | 7     |
+| 8         | 8     |
 
 ##Stop bits
 
 | Stop bits | Value |
 |:----------|:-----:|
-| 1         | 0     |
-| 2         | 1     |
+| 1         | 1     |
+| 2         | 2     |
 
 ##Flow control
 
 | Parity   | Value |
 |:---------|:-----:|
-| None     | 0     |
-| RTS/CTS  | 1     |
-| XON/XOFF | 2     |
+| None     | none  |
+| RTS/CTS  | hard  |
+| XON/XOFF | soft  |
 
 ##Constructor
 
 ```javascript
-var uart = new serial(Number port, String name, Number baudrate, Number parity, Number data_bits, Number stop_bits, Number flow_control);
+var uart = new serial(Number port, String name, Number baudrate, String parity, Number data_bits, Number stop_bits, String flow_control);
 ```
 
 **Description**
@@ -57,10 +57,10 @@ Create and configure a new instance of a serial port.
  - *Number*: ID of the serial port to target. This value is defined in the board-specific definition files.
  - *String*: friendly name to give to this serial instance.
  - *Number*: baudrate among the ones defined under [Baudrates](#baudrates)
- - *Number*: parity parameter among the ones defined under [Parity](#parity)
+ - *String*: parity parameter among the ones defined under [Parity](#parity)
  - *Number*: number of data bits among the ones defined under [Data bits](#data-bits)
  - *Number*: number of stop bits among the ones defined under [Stop bits](#stop-bits)
- - *Number*: flow control type among the ones defined under [Flow control](#flow-control)
+ - *String*: flow control type among the ones defined under [Flow control](#flow-control)
 
 **Return value**
 
@@ -69,7 +69,7 @@ New instance.
 **Example**
 
 ```javascript
-var uart = new serial(1, 'tty1', 6, 0, 1, 0, 0);
+var uart = new serial(1, 'tty1', 115200, 'none', 8, 1, 'none');
 ```
 
 ##request
@@ -284,13 +284,13 @@ None.
 **Example**
 
 ```javascript
-uart.set_baudrate(6);
+uart.set_baudrate(115200);
 ```
 
 ##get_parity
 
 ```javascript
-Number get_parity()
+String get_parity()
 ```
 
 **Description**
@@ -303,7 +303,7 @@ None.
 
 **Return value**
 
-*Number*: parity value among the ones defined under [Parity](#parity).
+*String*: parity value among the ones defined under [Parity](#parity).
 
 **Example**
 
@@ -314,7 +314,7 @@ console.log('Parity: ' + uart.get_parity());
 ##set_parity
 
 ```javascript
-set_parity(Number parity)
+set_parity(String parity)
 ```
 
 **Description**
@@ -323,7 +323,7 @@ Set the parity of the serial instance.
 
 **Parameters**
 
- - *Number*: baudrate value among the ones defined under [[Parity](#parity).
+ - *String*: parity value among the ones defined under [[Parity](#parity).
 
 **Return value**
 
@@ -332,13 +332,13 @@ None.
 **Example**
 
 ```javascript
-uart.set_parity(0);
+uart.set_parity('none');
 ```
 
-##get_data
+##get_data_bits
 
 ```javascript
-Number get_data()
+Number get_data_bits()
 ```
 
 **Description**
@@ -356,13 +356,13 @@ None.
 **Example**
 
 ```javascript
-console.log('Data bits: ' + uart.get_data());
+console.log('Data bits: ' + uart.get_data_bits());
 ```
 
-##set_data
+##set_data_bits
 
 ```javascript
-set_data(Number data_bits)
+set_data_bits(Number data_bits)
 ```
 
 **Description**
@@ -380,13 +380,13 @@ None.
 **Example**
 
 ```javascript
-uart.set_data(0);
+uart.set_data_bits(7);
 ```
 
-##get_stop
+##get_stop_bits
 
 ```javascript
-Number get_stop()
+Number get_stop_bits()
 ```
 
 **Description**
@@ -404,13 +404,13 @@ None.
 **Example**
 
 ```javascript
-console.log('Stop bits: ' + uart.get_stop());
+console.log('Stop bits: ' + uart.get_stop_bits());
 ```
 
-##set_stop
+##set_stop_bits
 
 ```javascript
-set_stop(Number stop_bits)
+set_stop_bits(Number stop_bits)
 ```
 
 **Description**
@@ -428,13 +428,13 @@ None.
 **Example**
 
 ```javascript
-uart.set_stop(0);
+uart.set_stop_bits(1);
 ```
 
 ##get_flowctrl
 
 ```javascript
-Number get_flowctrl()
+String get_flowctrl()
 ```
 
 **Description**
@@ -447,7 +447,7 @@ None.
 
 **Return value**
 
-*Number*: flow control value among the ones defined under [Flow control](#flow-control).
+*String*: flow control value among the ones defined under [Flow control](#flow-control).
 
 **Example**
 
@@ -458,7 +458,7 @@ console.log('Flow control: ' + uart.get_flowctrl());
 ##set_flowctrl
 
 ```javascript
-set_flowctrl(Number stop_bits)
+set_flowctrl(String flow_control)
 ```
 
 **Description**
@@ -467,7 +467,7 @@ Set the flow control configuration of the serial instance.
 
 **Parameters**
 
- - *Number*: flow control value among the ones defined under [Flow control](#flow-control).
+ - *String*: flow control value among the ones defined under [Flow control](#flow-control).
 
 **Return value**
 
@@ -476,7 +476,7 @@ None.
 **Example**
 
 ```javascript
-uart.set_flowctrl(1);
+uart.set_flowctrl('hard');
 ```
 
 #Events
@@ -484,7 +484,7 @@ uart.set_flowctrl(1);
 ##read
 
 ```javascript
-serial.on('read', function(String))
+serial.on('read', function(Buffer))
 ```
 
 **Description**
@@ -493,7 +493,7 @@ Called every time data is received on the serial port.
 
 **Parameters**
 
- - *String*: string containing the data that was received on the serial port.
+ - *Buffer*: buffer containing the data that was received on the serial port.
 
 **Example**
 

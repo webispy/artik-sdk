@@ -2,9 +2,9 @@ var events = require('events');
 var util = require('util');
 var serial = require('../lib/artik-sdk').serial;
 
-function Serial(id, label, baudrate, parity, frame_size, stop_bit, ctrl) {
+function Serial(id, label, baudrate, parity, frame_size, stop_bits, ctrl) {
 	events.EventEmitter.call(this);
-	this.serial = serial(id, label, baudrate, parity, frame_size, stop_bit, ctrl);
+	this.serial = serial(id, label, baudrate, parity, frame_size, stop_bits, ctrl);
 }
 
 util.inherits(Serial, events.EventEmitter);
@@ -41,8 +41,16 @@ Serial.prototype.get_parity = function get_parity() {
     return this.serial.get_parity();
 };
 
-Serial.prototype.get_data = function get_data() {
-    return this.serial.get_data();
+Serial.prototype.get_data_bits = function get_data_bits() {
+    return this.serial.get_data_bits();
+};
+
+Serial.prototype.get_stop_bits = function get_stop_bits() {
+    return this.serial.get_stop_bits();
+};
+
+Serial.prototype.get_flowctrl = function get_flowctrl() {
+    return this.serial.get_flowctrl();
 };
 
 Serial.prototype.set_port_num = function set_port_num(val) {
@@ -61,6 +69,14 @@ Serial.prototype.set_parity = function set_parity(val) {
     return this.serial.set_parity(val);
 };
 
-Serial.prototype.set_data = function set_data(val) {
-    return this.serial.set_data(val);
+Serial.prototype.set_data_bits = function set_data_bits(val) {
+    return this.serial.set_data_bits(val);
+};
+
+Serial.prototype.set_stop_bits = function set_stop_bits(val) {
+    return this.serial.set_stop_bits(val);
+};
+
+Serial.prototype.set_flowctrl = function set_flowctrl(val) {
+    return this.serial.set_flowctrl(val);
 };
