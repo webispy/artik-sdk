@@ -58,13 +58,23 @@ testCase('Serial', function() {
 
 			console.log('Starting Loopback Test...Make sure you have connected the Tx and Rx of the Serial Port with a wire');
 			var tx_buf = new Buffer('aabbccddeeff');
+			var rx_buf = null;
 
 			/* Transfer Data */
 			loopback.on('read', function(data) {
-				var rx_buf = new Buffer(data);
-				assert.equal(tx_buf.length, rx_buf.length);
-				assert.equal(tx_buf.equals(rx_buf), true);
-				done();
+				if (rx_buf == null) {
+					rx_buf = new Buffer(data);
+				}
+
+				if (rx_buf.length < tx_buf.length) {
+					rx_buf = Buffer.concat(rx_buf, data);
+				}
+
+				if (rx_buf.length >= tx_buf.length) {
+					assert.equal(tx_buf.length, rx_buf.length);
+					assert.equal(tx_buf.equals(rx_buf), true);
+					done();
+				}
 			});
 
 			console.log("Sending " + tx_buf.length + " bytes on the serial port");
