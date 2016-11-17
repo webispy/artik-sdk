@@ -57,20 +57,27 @@ testCase('Time', function() {
 
 	});
 
-	testCase('#set_time()', function() {
+	var dates = [module.get_time(), new Date(Date.UTC(2016, 9, 28, 11, 00, 23))];
+	dates.forEach(function(date) {
+		testCase('#set_time() with inital date = ' + date, function() {
+			pre(function(done) {
+				module.set_time(date);
+				done();
+			});
 
-		assertions('Sets the system time', function(done) {
-			var new_date  = module.get_time();
-			console.log("Init Time " + new_date.toUTCString());
-			new_date.setUTCSeconds(new_date.getUTCSeconds()+120);
-			module.set_time(new_date);
-			console.log("New time " + module.get_time().toUTCString());
-			var diff = module.get_time().getUTCSeconds() - new_date.getUTCSeconds();
-			console.log(diff);
-			assert.equal(module.get_time().toUTCString(), new_date.toUTCString());
-			done();
+			assertions('Sets the system time', function(done) {
+				this.timeout(121000);
+				var new_date = module.get_time();
+				var initial_date = module.get_time();
+				console.log("Init Time " + initial_date.toUTCString());
+				new_date.setUTCMinutes(initial_date.getUTCMinutes()+2);
+				module.set_time(new_date);
+				console.log("New time " + module.get_time().toUTCString());
+				var diff = module.get_time().getTime() - initial_date.getTime();
+				assert.equal(diff, 120000);
+				done();
+			});
 		});
-
 	});
 
 	testCase('#create_alarm_date()', function() {
