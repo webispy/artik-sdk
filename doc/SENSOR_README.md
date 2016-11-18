@@ -386,10 +386,10 @@ None.
 See [full example](#full-example).
 
 #TemperatureSensor API
-##get_celcius
+##get_celsius
 
 ```javascript
-Number get_celcius()
+Number get_celsius()
 ```
 
 **Description**

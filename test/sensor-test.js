@@ -163,13 +163,13 @@ testCase('Sensors', function() {
 
     testCase('#get_temperature_sensor()', function() {
 
-        assertions('#get_celcius() - returns temperature in Celsius', function() {
+        assertions('#get_celsius() - returns temperature in Celsius', function() {
 
             if (!envtemp_sensor)
                 this.skip();
 
-            console.log(envtemp_sensor.get_celcius());
-            assert.notEqual(envtemp_sensor.get_celcius(), -1);
+            console.log(envtemp_sensor.get_celsius());
+            assert.notEqual(envtemp_sensor.get_celsius(), -1);
         });
 
         assertions('#get_fahrenheit() - returns temperature in Fahrenheit', function() {

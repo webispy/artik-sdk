@@ -36,7 +36,7 @@ function my_loop() {
     console.log("Release PHOTO_LIGHT sensor\n");
 
     console.log("Request TEMP sensor\n");
-    console.log("Function 'get_celcius' : %d°C\n", envtemp_sensor.get_celcius());
+    console.log("Function 'get_celsius' : %d°C\n", envtemp_sensor.get_celsius());
     console.log("Function 'get_fahrenheit' : %d°F\n", envtemp_sensor.get_fahrenheit());
     console.log("Release ENV_TEMP sensor\n");
 
