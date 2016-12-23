@@ -10,7 +10,7 @@ var port = 443;
 var ssl_connection = 2;
 var use_se = false;
 var register_message = '{"sdid":"' + device_id + '","Authorization":"bearer ' + auth_token + '","type":"register"}';
-var test_send_message = '{\"data\": "' + message_data + '" ,"sdid": "' + device_id +  '","type": "message"}';
+var test_send_message = '{"data": ' + message_data + ' ,"sdid": "' + device_id +  '","type": "message"}';
 
 var conn = new websocket(host, uri, port, ssl_connection, use_se);
 
