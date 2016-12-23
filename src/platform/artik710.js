@@ -50,20 +50,3 @@ exports.ARTIK_A710_SPI = { 'BUS' : { 'BUS0' : 2 },
 				      'MODE3' : 3,},
 			   'BITS' : { 'BITS8' : 8},
 			   };
-
-/* TIME definition */
-exports.ARTIK_A710_TIME = { 'ZONE' : { 'UTC' : 0,
-		 		       'GMT1' : 1,
-		 		       'GMT2' : 2,
-				       'GMT3' : 3,
-				       'GMT4' : 4,
-				       'GMT5' : 5,
-				       'GMT6' : 6,
-				       'GMT7' : 7,
-				       'GMT8' : 8,
-				       'GMT9' : 9,
-				       'GMT10' : 10,
-				       'GMT11' : 11,
-				       'GMT12' : 12 },
-			    'DFORMAT_DATE' : 'h:m:s:S-d-D/M/Y\0'
-		       };
