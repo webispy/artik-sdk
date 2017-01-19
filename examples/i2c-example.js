@@ -3,12 +3,10 @@
  * artik520 : $ echo 1-0062 > /sys/bus/i2c/drivers/cw201x/unbind
  * artik1020: $ echo 0-0062 > /sys/bus/i2c/drivers/cw201x/unbind
  * artik710 : $ echo 8-0062 > /sys/bus/i2c/drivers/cw201x/unbind
+ * artik530 : $ echo 8-0062 > /sys/bus/i2c/drivers/cw201x/unbind
  */
 
-
-
 const artik = require('../lib/artik-sdk');
-
 const name = artik.get_platform_name();
 
 if(name == 'Artik 520') {
@@ -19,6 +17,9 @@ if(name == 'Artik 520') {
 	var cw2015 = artik.i2c(0, 2000, '8', 0x62);
 } else if(name == 'Artik 710') {
 	console.log('Running I2C test on Artik 710');
+	var cw2015 = artik.i2c(8, 2000, '8', 0x62);
+} else if(name == 'Artik 530') {
+	console.log('Running I2C test on Artik 530');
 	var cw2015 = artik.i2c(8, 2000, '8', 0x62);
 }
 
