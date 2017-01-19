@@ -32,4 +32,4 @@ media.play_sound_file('/opt/music.mp3', function() {
 
 #Full example
 
-   * See [media-test.js](/test/media-test.js)
+   * See [media-example.js](/examples/media-example.js)

@@ -250,4 +250,4 @@ Synchronize current system time with NTP server.
 
 # Full example
 
-   * See [time-test.js](/test/time-test.js)
+   * See [time-example.js](/examples/time-example.js)

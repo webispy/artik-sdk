@@ -141,4 +141,4 @@ See [Full example](#full-example)
 
 #Full example
 
-   * See [spi-test.js](/test/spi-test.js)
+   * See [spi-example.js](/examples/spi-example.js)

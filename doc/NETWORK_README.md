@@ -59,4 +59,4 @@ network.get_online_status(function(status) {
 
 #Full example
 
-   * See [network-test.js](/test/network-test.js)
+   * See [network-example.js](/examples/network-example.js)

@@ -382,4 +382,4 @@ See [full example](#full-example)
 
 #Full example
 
-   * See [zigbee-test.js](/test/zigbee-test.js)
+   * See [zigbee-example.js](/examples/zigbee-example.js)

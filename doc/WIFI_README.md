@@ -185,4 +185,4 @@ process.on('SIGINT', function () {
 });
 ```
 
-   * See [wifi-test.js](/test/wifi-test.js)
+   * See [wifi-example.js](/examples/wifi-example.js)

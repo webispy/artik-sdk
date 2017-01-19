@@ -146,4 +146,4 @@ See [Full example](#full-example)
 
 #Full example
 
-   * See [http-test.js](/test/http-test.js)
+   * See [http-example.js](/examples/http-example.js)

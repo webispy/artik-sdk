@@ -197,4 +197,4 @@ console.log('ID: ' + led.get_id());
 
 #Full example
 
-   * See [gpio-test.js](/test/gpio-test.js)
+   * See [gpio-example.js](/examples/gpio-example.js)
