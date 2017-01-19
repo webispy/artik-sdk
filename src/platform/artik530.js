@@ -41,7 +41,7 @@ exports.ARTIK_A530_PWM = { 'PWMIO' : { 'XPWMIO0' : 2 },
 		       };
 
 /* SPI definition */
-exports.ARTIK_A530_SPI = { 'BUS' : { 'BUS2' : 2 },
+exports.ARTIK_A530_SPI = { 'BUS' : { 'BUS0' : 2 },
 			   'CS'  : { 'CS0' : 0,
 				     'CS1' : 1 },
 			   'MODE' : { 'MODE0' : 0,
