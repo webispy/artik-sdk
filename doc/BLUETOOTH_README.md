@@ -335,4 +335,4 @@ bluetooth.pxp_set_immediate_level('01:02:03:04:05:06', 'high');
 
 ##Full example
 
-   * See [bluetooth-test.js](/test/bluetooth-test.js)
+   * See [bluetooth-example.js](/examples/bluetooth-example.js)

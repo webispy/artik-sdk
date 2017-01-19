@@ -499,7 +499,6 @@ Called every time data is received on the serial port.
 
 See [full example](#full-example)
 
-
 #Full example
 
-   * See [serial-test.js](/test/serial-test.js)
+   * See [serial-example.js](/examples/serial-example.js)

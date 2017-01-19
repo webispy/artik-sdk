@@ -207,5 +207,5 @@ if (temperature.request()) {
 }
 ```
 
-   * See [adc-test.js](/test/adc-test.js)
+   * See [adc-example.js](/examples/adc-example.js)
 

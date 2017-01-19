@@ -342,4 +342,4 @@ See [full example](#full-example)
 
 #Full example
 
-   * See [pwm-test.js](/test/pwm-test.js)
+   * See [pwm-example.js](/examples/pwm-example.js)

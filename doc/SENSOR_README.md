@@ -478,4 +478,4 @@ See [full example](#full-example).
 
 #Full example
 
-   * See [sensor-test.js](/test/sensor-test.js)
+   * See [sensor-example.js](/examples/sensor-example.js)

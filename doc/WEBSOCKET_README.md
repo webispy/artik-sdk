@@ -139,7 +139,6 @@ Called after a data was received on the websocket.
 
 See [full example](#full-example)
 
-
 #Full example
 
-   * See [websocket-test.js](/test/websocket-test.js)
+   * See [websocket-example.js](/examples/websocket-example.js)

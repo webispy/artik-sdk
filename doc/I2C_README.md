@@ -166,4 +166,4 @@ See [Full example](#full-example)
 
 #Full example
 
-   * See [i2c-test.js](/test/i2c-test.js)
+   * See [i2c-example.js](/examples/i2c-example.js)

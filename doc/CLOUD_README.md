@@ -503,5 +503,8 @@ Full SDR procedure is documented [here](https://developer.artik.cloud/documentat
 
 See [sdr-example.js](/examples/sdr-example.js) for client side implementation.
 
+##Websocket example
+   * See [cloud-websocket-example.js](/examples/cloud-websocket-example.js)
+
 ##Other example
-   * See [cloud-test.js](/test/cloud-test.js)
+   * See [cloud-example.js](/examples/cloud-example.js)
