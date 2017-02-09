@@ -31,7 +31,7 @@ if (cw2015.request()) {
   console.log('Config: 0x' + Buffer(reg).toString('hex'));
   reg = new Buffer([0xff], 'hex');
   console.log('Writing 0x' + Buffer(reg).toString('hex') + ' to config register');
-  cw2015.write_register(8, reg, 1);
+  cw2015.write_register(8, reg);
   reg = cw2015.read_register(8, 1);
   console.log('Config: 0x' + Buffer(reg).toString('hex'));
 
