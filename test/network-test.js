@@ -59,7 +59,7 @@ testCase('Network', function() {
 
 	});
 
-	testCase('#get_current_public_ip()', function() {
+	testCase('#get_current_ip()', function() {
 
 		postEach('Enabling Wifi', function(done) {
 			this.timeout(15000);
@@ -69,7 +69,7 @@ testCase('Network', function() {
 
 		assertions('Get Current Public Ip - Should return a valid IP', function(done) {
 				this.timeout(2000);
-				var ip = network.get_current_public_ip();
+				var ip = network.get_current_ip();
 				console.log("IP Address: " + ip);
 				assert( validator.isIP(ip), true );
 				done();
@@ -79,7 +79,7 @@ testCase('Network', function() {
 		assertions('Get Current Public Ip - Should return null when there is no connectivity', function(done) {
 				exec("ifconfig wlan0 down");
 				try {
-					var ip = network.get_current_public_ip();
+					var ip = network.get_current_ip();
 					console.log("IP Address: " + ip);
 					assert( ip, null );
 				} catch (e) {
